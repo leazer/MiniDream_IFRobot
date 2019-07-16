@@ -14,23 +14,23 @@ rtt库目录中将工程文件夹作为bsp的子项存在，想必会有伙伴�
 
 与官方的教程一致，复制```libraries/templates下stm32f10xx```工程模板到```RTT_ROOT/bsp```目录中，目的是为了保证配置文件中的路径正确。
 
-####2修改board目录文件
+#### 2修改board目录文件
 
 修改board文件夹中的如内容：
 
-##### kconfig
+**kconfig**
 
 将config 改成相应芯片的名字
 
 ![1563300126177](BSP移植过程.assets/1563300126177.png)
 
-##### SConscript
+**SConscript**
 
 按照官方教程，将启动文件改成相应的，本例子中改成了```startup_stm32f103xg.s```
 
 ![1563301107319](BSP移植过程.assets/1563301107319.png)
 
-#####linker_scripts 文件夹
+**linker_scripts 文件夹**
 
 按照官方教程，更改芯片的flash和ram大小。
 
@@ -40,11 +40,11 @@ rtt库目录中将工程文件夹作为bsp的子项存在，想必会有伙伴�
 
 ![1563300667694](BSP移植过程.assets/1563300667694.png)
 
-##### board.h
+**board.h**
 
 ![1563301073945](BSP移植过程.assets/1563301073945.png)
 
-##### CubeMX_Config文件夹
+**CubeMX_Config文件夹**
 
 按照官方教程中方法修改并配置，只是需要注意的是，最新版stm32F103HAL库是1.7.0，其中的can组件st官方重构了整个库，与上一版本差别很大，而rt-Thead中的hal库是1.6.1版本的，所以在cubeMX配置中要进行如下设置：
 
