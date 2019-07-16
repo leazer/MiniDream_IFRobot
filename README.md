@@ -1,2 +1,2 @@
-# MiniDream_Robot
-MiniDream Robot with RT_Thread
+# MiniDream_IFRobot
+MiniDream IFRobot with RT_Thread

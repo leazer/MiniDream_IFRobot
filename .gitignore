@@ -10,8 +10,6 @@
 *.idb
 *.ilk
 *.old
-build
-Debug
 
 *~
 *.o
@@ -23,4 +21,7 @@ Debug
 *.i
 *.d
 
-
+.vscode
+PCB
+build
+Debug
