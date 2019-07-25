@@ -32,8 +32,50 @@ menu "On-chip Peripheral Drivers"
                 depends on BSP_USING_UART1 && RT_SERIAL_USING_DMA
                 default n
         endif
+    menuconfig BSP_USING_TIM
+        bool "Enable Timer"
+        default n 
+        select RT_USING_HWTIMER
+        if BSP_USING_TIM
+            config BSP_USING_TIM8
+                bool "Enable TIM8"
+                default N
+        endif
+     menuconfig BSP_USING_PWM
+        bool "Enable pwm"
+        default n
+        select RT_USING_PWM
+        if BSP_USING_PWM
+            menuconfig BSP_USING_PWM3
+            bool "Enable timer3 output pwm"
+            default n
+            if BSP_USING_PWM3
+                config BSP_USING_PWM3_CH1
+                    bool "Enable PWM3 channel1 servo1"
+                    default n
+                config BSP_USING_PWM3_CH2
+                    bool "Enable PWM3 channel2 servo2"
+                    default n
+            endif
+            menuconfig BSP_USING_PWM8
+            bool "Enable timer8 output pwm"
+            default n
+            if BSP_USING_PWM8
+                config BSP_USING_PWM8_CH1
+                    bool "Enable PWM8 channel1"
+                    default n
+                config BSP_USING_PWM8_CH2
+                    bool "Enable PWM8 channel2"
+                    default n
+                config BSP_USING_PWM8_CH3
+                    bool "Enable PWM8 channel3"
+                    default n
+                config BSP_USING_PWM8_CH4
+                    bool "Enable PWM8 channel4"
+                    default n
+            endif
+        endif
     
-
 endmenu
 
 menu "Board extended module Drivers"

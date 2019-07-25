@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER, STM32F103xG</Define>
               <Undefine></Undefine>
-              <IncludePath>.;rt-thread\include;applications;.;board;board\CubeMX_Config\Inc;libraries\HAL_Drivers;libraries\HAL_Drivers\config;packages\EasyLogger-v2.0.0\inc;rt-thread\libcpu\arm\cortex-m3;rt-thread\libcpu\arm\common;rt-thread\components\drivers\include;rt-thread\components\drivers\include;rt-thread\components\drivers\include;libraries\STM32F1xx_HAL\CMSIS\Device\ST\STM32F1xx\Include;libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Inc;libraries\STM32F1xx_HAL\CMSIS\Include</IncludePath>
+              <IncludePath>.;rt-thread\include;applications;.;board;board\CubeMX_Config\Inc;libraries\HAL_Drivers;libraries\HAL_Drivers\config;packages\rt-robot-latest\chassis;packages\rt-robot-latest\controller;packages\rt-robot-latest\encoder;packages\rt-robot-latest\kinematics;packages\rt-robot-latest\motor;packages\rt-robot-latest\pid;packages\rt-robot-latest\robot;packages\rt-robot-latest\wheel;rt-thread\libcpu\arm\cortex-m3;rt-thread\libcpu\arm\common;rt-thread\components\drivers\include;rt-thread\components\drivers\include;rt-thread\components\drivers\include;rt-thread\components\finsh;libraries\STM32F1xx_HAL\CMSIS\Device\ST\STM32F1xx\Include;libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Inc;libraries\STM32F1xx_HAL\CMSIS\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -463,6 +463,11 @@
           <GroupName>Applications</GroupName>
           <Files>
             <File>
+              <FileName>IFRobot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\IFRobot.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
@@ -498,6 +503,11 @@
               <FilePath>libraries\HAL_Drivers\drv_usart.c</FilePath>
             </File>
             <File>
+              <FileName>drv_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>libraries\HAL_Drivers\drv_pwm.c</FilePath>
+            </File>
+            <File>
               <FileName>drv_common.c</FileName>
               <FileType>1</FileType>
               <FilePath>libraries\HAL_Drivers\drv_common.c</FilePath>
@@ -505,32 +515,77 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>EasyLogger</GroupName>
+          <GroupName>robots</GroupName>
           <Files>
             <File>
-              <FileName>elog.c</FileName>
+              <FileName>chassis.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\EasyLogger-v2.0.0\src\elog.c</FilePath>
+              <FilePath>packages\rt-robot-latest\chassis\chassis.c</FilePath>
             </File>
             <File>
-              <FileName>elog_async.c</FileName>
+              <FileName>command.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\EasyLogger-v2.0.0\src\elog_async.c</FilePath>
+              <FilePath>packages\rt-robot-latest\controller\command.c</FilePath>
             </File>
             <File>
-              <FileName>elog_buf.c</FileName>
+              <FileName>ps2.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\EasyLogger-v2.0.0\src\elog_buf.c</FilePath>
+              <FilePath>packages\rt-robot-latest\controller\ps2.c</FilePath>
             </File>
             <File>
-              <FileName>elog_utils.c</FileName>
+              <FileName>encoder.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\EasyLogger-v2.0.0\src\elog_utils.c</FilePath>
+              <FilePath>packages\rt-robot-latest\encoder\encoder.c</FilePath>
             </File>
             <File>
-              <FileName>elog_port.c</FileName>
+              <FileName>encoder_AB.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\EasyLogger-v2.0.0\port\elog_port.c</FilePath>
+              <FilePath>packages\rt-robot-latest\encoder\encoder_AB.c</FilePath>
+            </File>
+            <File>
+              <FileName>encoder_single.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\encoder\encoder_single.c</FilePath>
+            </File>
+            <File>
+              <FileName>kinematics.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\kinematics\kinematics.c</FilePath>
+            </File>
+            <File>
+              <FileName>dual_pwm_motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\motor\dual_pwm_motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\motor\motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>single_pwm_motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\motor\single_pwm_motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\pid\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>mobile_robot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\robot\mobile_robot.c</FilePath>
+            </File>
+            <File>
+              <FileName>robot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\robot\robot.c</FilePath>
+            </File>
+            <File>
+              <FileName>wheel.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\rt-robot-latest\wheel\wheel.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -573,6 +628,11 @@
               <FilePath>rt-thread\components\drivers\misc\pin.c</FilePath>
             </File>
             <File>
+              <FileName>rt_drv_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\drivers\misc\rt_drv_pwm.c</FilePath>
+            </File>
+            <File>
               <FileName>serial.c</FileName>
               <FileType>1</FileType>
               <FilePath>rt-thread\components\drivers\serial\serial.c</FilePath>
@@ -611,6 +671,91 @@
               <FileName>workqueue.c</FileName>
               <FileType>1</FileType>
               <FilePath>rt-thread\components\drivers\src\workqueue.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>finsh</GroupName>
+          <Files>
+            <File>
+              <FileName>shell.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\shell.c</FilePath>
+            </File>
+            <File>
+              <FileName>symbol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\symbol.c</FilePath>
+            </File>
+            <File>
+              <FileName>cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>msh.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\msh.c</FilePath>
+            </File>
+            <File>
+              <FileName>msh_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\msh_cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>msh_file.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\msh_file.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_compiler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_compiler.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_error.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_error.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_heap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_heap.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_node.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_node.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_ops.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_ops.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_parser.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_var.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_var.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_vm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_vm.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_token.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>rt-thread\components\finsh\finsh_token.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -686,6 +831,16 @@
               <FileName>stm32f1xx_hal_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c</FilePath>
             </File>
           </Files>
         </Group>

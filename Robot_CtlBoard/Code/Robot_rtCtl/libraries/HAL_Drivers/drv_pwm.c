@@ -14,6 +14,7 @@
 
 //#define DRV_DEBUG
 #define LOG_TAG             "drv.pwm"
+#define DBG_LEVEL         DBG_LOG
 #include <drv_log.h>
 
 #define MAX_PERIOD 65535
@@ -357,7 +358,11 @@ static rt_err_t stm32_hw_pwm_init(struct stm32_pwm *device)
     oc_config.Pulse = 0;
     oc_config.OCPolarity = TIM_OCPOLARITY_HIGH;
     oc_config.OCFastMode = TIM_OCFAST_DISABLE;
-
+//	  oc_config.OCPolarity = TIM_OCPOLARITY_HIGH;
+//	  oc_config.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+//	  oc_config.OCFastMode = TIM_OCFAST_DISABLE;
+//	  oc_config.OCIdleState = TIM_OCIDLESTATE_RESET;
+//	  oc_config.OCNIdleState = TIM_OCNIDLESTATE_RESET;
     /* config pwm channel */
     if (device->channel & 0x01)
     {
@@ -404,7 +409,7 @@ static rt_err_t stm32_hw_pwm_init(struct stm32_pwm *device)
 
     /* enable update request source */
     __HAL_TIM_URS_ENABLE(tim);
-
+	
 __exit:
     return result;
 }

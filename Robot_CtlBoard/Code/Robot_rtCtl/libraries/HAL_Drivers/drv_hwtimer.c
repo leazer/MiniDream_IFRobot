@@ -14,6 +14,7 @@
 
 //#define DRV_DEBUG
 #define LOG_TAG             "drv.hwtimer"
+#define DBG_LEVEL         DBG_LOG
 #include <drv_log.h>
 
 #ifdef RT_USING_HWTIMER

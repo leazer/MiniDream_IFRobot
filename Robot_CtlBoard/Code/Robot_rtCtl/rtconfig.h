@@ -56,6 +56,18 @@
 
 /* Command shell */
 
+#define RT_USING_FINSH
+#define FINSH_THREAD_NAME "tshell"
+#define FINSH_USING_HISTORY
+#define FINSH_HISTORY_LINES 5
+#define FINSH_USING_SYMTAB
+#define FINSH_USING_DESCRIPTION
+#define FINSH_THREAD_PRIORITY 20
+#define FINSH_THREAD_STACK_SIZE 4096
+#define FINSH_CMD_SIZE 80
+#define FINSH_USING_MSH
+#define FINSH_USING_MSH_DEFAULT
+#define FINSH_ARG_MAX 10
 
 /* Device virtual file system */
 
@@ -68,6 +80,7 @@
 #define RT_SERIAL_USING_DMA
 #define RT_SERIAL_RB_BUFSZ 64
 #define RT_USING_PIN
+#define RT_USING_PWM
 
 /* Using WiFi */
 
@@ -128,22 +141,12 @@
 
 /* tools packages */
 
-#define PKG_USING_EASYLOGGER
-
-/* EasyLogger Options */
-
-#define PKG_EASYLOGGER_ENABLE_OUTPUT
-#define PKG_EASYLOGGER_OUTPUT_LVL_VERBOSE
-#define PKG_EASYLOGGER_ENABLE_ASSERT
-#define PKG_EASYLOGGER_LINE_BUF_SIZE 128
-#define PKG_EASYLOGGER_FILTER_TAG_MAX_LEN 30
-#define PKG_EASYLOGGER_FILTER_KW_MAX_LEN 16
-#define PKG_EASYLOGGER_NEWLINE_SIGN_CRLF
-#define PKG_EASYLOGGER_ENABLE_COLOR
-#define PKG_USING_EASYLOGGER_V200
 
 /* system packages */
 
+#define PKG_USING_ROBOTS
+#define PKG_USING_ROBOTS_LATEST_VERSION
+#define PKG_ROBOT_VER_NUM 0x99999
 
 /* peripheral libraries and drivers */
 
@@ -167,6 +170,15 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_UART5
+#define BSP_USING_PWM
+#define BSP_USING_PWM3
+#define BSP_USING_PWM3_CH1
+#define BSP_USING_PWM3_CH2
+#define BSP_USING_PWM8
+#define BSP_USING_PWM8_CH1
+#define BSP_USING_PWM8_CH2
+#define BSP_USING_PWM8_CH3
+#define BSP_USING_PWM8_CH4
 
 /* Board extended module Drivers */
 
