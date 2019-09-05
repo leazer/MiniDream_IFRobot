@@ -4,9 +4,7 @@
 #include <rtdevice.h>
 
 
-int IFRobot_chassis_create(void);
-int IFRobot_chassis_test(rt_int8_t speed1,rt_int8_t speed2,rt_int8_t speed3,rt_int8_t speed4);
-
+int IFRobot_chassis_init(void);
 
 
 

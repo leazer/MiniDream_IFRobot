@@ -22,7 +22,6 @@
 *.d
 
 .vscode
-PCB
 build
 Debug
 rt-robot

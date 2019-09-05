@@ -14,7 +14,6 @@
 
 //#define DRV_DEBUG
 #define LOG_TAG             "drv.pwm"
-#define DBG_LEVEL         DBG_LOG
 #include <drv_log.h>
 
 #define MAX_PERIOD 65535
