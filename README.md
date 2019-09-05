@@ -5,7 +5,7 @@
 ***I'm a fan of Robot.***
 从小就有着机甲梦的我，之前一直有参加Robomaster机器人大赛，组建的队伍名字叫DreamTeam，偶然间看到RTT的公众号上有这个活动，便萌生新意，想要从新设计一套能够用于新生学习、锻炼能力的机器人对战平台，于是就有了MiniDeam。
 
-![需求思维导图.png](README.assets/a0a22756ly1g6ohqb8gn0j214e0kygmz.jpg)
+![需求思维导图.png](https://ws1.sinaimg.cn/large/a0a22756ly1g6ok1pbnloj214e0kygmz.jpg)
 ### 项目架构组成
 ```graphviz
 digraph hierarchy {
